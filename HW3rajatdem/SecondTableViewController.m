@@ -19,13 +19,33 @@
     self = [super init];
     if(self)
     {
-        _events = @[@"Kick-Off Rally",
-                    @"Blacktie & Tailpipes Gala",
-                    @"Historics at Pitt Race Weekend "];
-        _eventDates = @[@"Sunday, July 2 at TBD",
-                        @"July 7 at TBD",
-                        @"July 7-9 at Pittsburgh International Race Complex "];
-                        }
+       
+        NSDictionary *eventNames = @{@"item0": @"Kick-Off Rally",
+                                     @"item1": @"Blacktie & Tailpipes Gala",
+                                     @"item2": @"Historics at Pitt Race Weekend",
+                                     @"item3": @"Walk of Peace",
+                                     @"item4": @"Home Coming",
+                                     @"item5": @"Movie Night",
+                                     @"item6": @"Bowling",
+                                     @"item7": @"Pizza Party",
+                                     @"item8": @"Independence Day",
+                                     @"item9": @"End of Semester"};
+        
+        NSDictionary *eventDateLocation = @{@"item0": @"Sunday, July 2 at TBD",
+                                            @"item1": @"July 7 at TBD",
+                                            @"item2": @"July 7-9 at Pittsburgh International Race Complex ",
+                                            @"item3": @"June 10 at UPitt",
+                                            @"item4": @"June 11 at Murray Avenue",
+                                            @"item5": @"Aug 4 at PNC Park",
+                                            @"item6": @"June 22 at PPG",
+                                            @"item7": @"June 30 at PizzaHut",
+                                            @"item8": @"July 4 at Point State Park",
+                                            @"item9": @"Aug 12 at TBD"};
+        
+        _events = eventNames.allValues;
+        _eventDates = eventDateLocation.allValues;
+                }
+    NSLog(@"%@ %@", _events, _eventDates);
         return self;
     }
 

@@ -40,13 +40,26 @@
     NSString *eventName=_eventName.text;
     NSString *eventTime=_eventTime.text;
     NSString *eventLocation=_eventLocation.text;
+    
     // Get Master view controller
     ThirdTableViewController *masterController =
     (ThirdTableViewController
      *)[self.navigationController.viewControllers
         objectAtIndex:self.navigationController.viewControllers.count-2];
+    
+    if(eventTime.length == 0){
+        eventTime = @"Today";
+    }
+    
+    if(eventLocation.length == 0){
+        eventLocation = @"TBD";
+    }
+    
     [masterController insertNewObjectEventName:eventName
                                      eventTime:eventTime eventLocation:eventLocation];
+    
+    
+    NSLog(@"EventName: %@ EventTime: %@ EventLocation: %@", eventName, eventTime, eventLocation);
     [self.navigationController popViewControllerAnimated:YES];
 }
 @end
